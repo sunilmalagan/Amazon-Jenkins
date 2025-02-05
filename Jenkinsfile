@@ -26,17 +26,16 @@ pipeline {
         
     }
 
-  post{
-
-  success{
-     echo 'Build success'
-  }
-    
-  failure{
-       echo 'Failure in the build'
-   }
-
-  }
-
+    post {
+        always {
+            echo 'This runs regardless of build result'
+        }
+        success {
+            echo 'Build success'
+        }
+        failure {
+            echo 'Failure in the build'
+        }
+    }
 
 }
